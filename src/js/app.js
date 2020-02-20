@@ -29,19 +29,21 @@ function json(data) {
 class GameSavingLoader {
 
   load() {
-   read().then((data) => {
-     return json(data);
-   }).then((data) => {
-     return console.log(data);
+   read().then((dataFromRead) => {
+     return json(dataFromRead);
+   }).then((parserJson) => {
+     return console.log(parserJson);
    })
   }
 }  
 
 const newSave = new GameSavingLoader();
 
+newSave.load();
 
-newSave.load().then((saving) => {
-    console.log('Save ', saving)
-  }, (error) => {
-    console.log('ERORRR')
-  });
+
+// newSave.load().then((saving) => {
+//     console.log('Save ', saving)
+//   }, (error) => {
+//     console.log('ERORRR')
+//   });
