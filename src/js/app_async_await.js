@@ -2,16 +2,16 @@ import { read } from './reader';
 import { json } from './parser';
 
 
-class GameSavingLoader {
+export class GameSavingLoader {
 
   load() {
     
-    (async () => {
+    return new Promise((resolve,reject)=> {
+      (async () => {
       const dataFromRead = await read();
       const parserJson = await json(dataFromRead);
-      return parserJson
+      return resolve(parserJson);
     })();
+    }) 
   }
 }    
-
- export const newSave = new GameSavingLoader();

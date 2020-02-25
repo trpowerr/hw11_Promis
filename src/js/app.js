@@ -2,7 +2,7 @@ import { read } from './reader';
 import { json } from './parser';
 
 
-class GameSavingLoader {
+export class GameSavingLoader {
 
   load() {
   return new Promise((resolve, reject) => {
@@ -16,4 +16,4 @@ class GameSavingLoader {
   }
 }  
 
- export const newSave = new GameSavingLoader();
+
